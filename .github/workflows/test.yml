@@ -24,10 +24,10 @@ jobs:
         run: onlishop-cli --version
 
       - name: Clone FroshTools
-        run: git clone https://github.com/FriendsOfOnlishop/FroshTools.git
+        run: git clone https://github.com/onlishop/SwagPlatformDemoData.git
 
       - name: Zip FroshTools
-        run: onlishop-cli extension zip FroshTools
+        run: onlishop-cli extension zip SwagPlatformDemoData
 
       - name: Validate
-        run: onlishop-cli extension validate FroshTools-*.zip
+        run: onlishop-cli extension validate SwagPlatformDemoData-*.zip
