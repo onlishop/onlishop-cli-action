@@ -1,0 +1,33 @@
+name: Test
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Setup repo
+        uses: actions/checkout@v5
+
+      - name: Install Onlishop CLI
+        uses: ./.
+
+      - name: Test binary
+        run: onlishop-cli --version
+
+      - name: Clone FroshTools
+        run: git clone https://github.com/FriendsOfOnlishop/FroshTools.git
+
+      - name: Zip FroshTools
+        run: onlishop-cli extension zip FroshTools
+
+      - name: Validate
+        run: onlishop-cli extension validate FroshTools-*.zip

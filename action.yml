@@ -1,0 +1,20 @@
+name: 'Onlishop CLI Action'
+description: 'GitHub Action for Onlishop CLI, a command line tool helper for Onlishop'
+author: 'onlishop AG'
+branding:
+  color: 'green'
+  icon: 'package'
+
+inputs:
+  version:
+    description: 'Onlishop CLI version'
+    default: 'latest'
+    required: false
+  token:
+    description: "GitHub Token used to authenticate against a repository for Git context"
+    default: ${{ github.token }}
+    required: false
+
+runs:
+  using: 'node24'
+  main: 'dist/main/main.js'
