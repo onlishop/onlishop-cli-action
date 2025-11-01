@@ -1,6 +1,5 @@
 name: 'Onlishop CLI Action'
 description: 'GitHub Action for Onlishop CLI, a command line tool helper for Onlishop'
-author: 'onlishop AG'
 branding:
   color: 'green'
   icon: 'package'
